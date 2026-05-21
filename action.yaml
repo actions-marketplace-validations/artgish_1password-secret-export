@@ -14,22 +14,22 @@ inputs:
     required: true
   sections:
     description: 1Password item section
-    default: ''
+    default: ""
     required: false
   export_variables:
     description: export secrets to environment variables
-    default: 'true'
+    default: "true"
     required: false
   export_to_file:
     description: if specified, will export to file in .env format
-    default: ''
+    default: ""
     required: false
 
 runs:
   using: composite
   steps:
     - name: install 1Password cli
-      uses: 1Password/install-cli-action@v2.0.1
+      uses: 1Password/install-cli-action@v3.0.0
 
     - name: export secrets
       shell: bash
@@ -45,3 +45,4 @@ runs:
 branding:
   icon: "terminal"
   color: "black"
+
